@@ -19,7 +19,7 @@
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 0;
     position: fixed;
     left: 250px;
     width: 0;
@@ -36,13 +36,23 @@
 #wrapper.toggled #sidebar-wrapper {
     width: 250px;
 }
-
 #page-content-wrapper {
     width: 100%;
     position: absolute;
     padding: 15px;
+	margin-top:40px;
 }
-
+#wrapper.toggled #navbar-toggle{
+	left:250px;
+	right:-250px;
+}
+#navbar-toggle{
+	z-index:1;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
@@ -52,7 +62,7 @@
 
 .sidebar-nav {
     position: absolute;
-    top: 0;
+    top: 24px;
     width: 250px;
     margin: 0;
     padding: 0;
@@ -62,6 +72,7 @@
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+	margin-left:15px;
 }
 
 .sidebar-nav li a {
@@ -95,22 +106,46 @@
     color: #fff;
     background: none;
 }
-
+.sidebar-nav li a>i{
+	margin-left:-24px;
+	margin-right: 24px;
+}
+.navbar-toggle{
+	float: left;
+	margin-left: 15px;
+}
+.btn-fab{
+    border-radius: 50%;
+    width: 50px;
+	z-index: 2;
+	position:fixed;
+}
+.btn-fab.top{ top:20px;}
+.btn-fab.bottom{bottom:20px;}
+.btn-fab.left{left:20px;}
+.btn-fab.right{right:20px;}
+@media (min-width: 0) {
+	.navbar-toggle{
+		  display: block; /* force showing the toggle */
+	}
+}
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+       padding-left: 64px;
     }
-
     #wrapper.toggled {
-        padding-left: 0;
+       padding-left: 250px;
     }
-
+	#wrapper.toggled  #navbar-toggle,#navbar-toggle{
+		left:0;
+		right:0;
+	 }
     #sidebar-wrapper {
-        width: 250px;
+        width: 64px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 0;
+        width: 250px;
     }
 
     #page-content-wrapper {
