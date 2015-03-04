@@ -19,14 +19,14 @@
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 0;
     position: fixed;
     left: 250px;
     width: 0;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #F8F8F8;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -36,13 +36,23 @@
 #wrapper.toggled #sidebar-wrapper {
     width: 250px;
 }
-
 #page-content-wrapper {
     width: 100%;
     position: absolute;
     padding: 15px;
+	margin-top:40px;
 }
-
+#wrapper.toggled #navbar-toggle{
+	left:250px;
+	right:-250px;
+}
+#navbar-toggle{
+	z-index:1;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
@@ -52,7 +62,7 @@
 
 .sidebar-nav {
     position: absolute;
-    top: 0;
+    top: 24px;
     width: 250px;
     margin: 0;
     padding: 0;
@@ -68,6 +78,7 @@
     display: block;
     text-decoration: none;
     color: #999999;
+	margin-left:15px;
 }
 
 .sidebar-nav li a:hover {
@@ -95,22 +106,52 @@
     color: #fff;
     background: none;
 }
-
+.sidebar-nav li a>i{
+	margin-left:-24px;
+	margin-right: 24px;
+}
+.sidebar-nav li:hover {
+	background:#eee;
+}
+.sidebar-nav li:hover  a{
+	color:#337ab7;
+}
+.navbar-toggle{
+	float: left;
+	margin-left: 15px;
+}
+.btn-fab{
+    border-radius: 50%;
+    width: 4rem;
+	z-index: 2;
+	position:fixed;
+}
+.btn-fab.top{ top:3rem;}
+.btn-fab.bottom{bottom:3rem;}
+.btn-fab.left{left:15px;}
+.btn-fab.right{right:15px;}
+@media (min-width: 0) {
+	.navbar-toggle{
+		  display: block; /* force showing the toggle */
+	}
+}
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+       padding-left: 64px;
     }
-
     #wrapper.toggled {
-        padding-left: 0;
+       padding-left: 250px;
     }
-
+	#wrapper.toggled  #navbar-toggle,#navbar-toggle{
+		left:0;
+		right:0;
+	 }
     #sidebar-wrapper {
-        width: 250px;
+        width: 64px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 0;
+        width: 250px;
     }
 
     #page-content-wrapper {
