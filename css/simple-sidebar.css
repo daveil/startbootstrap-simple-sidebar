@@ -26,7 +26,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #F8F8F8;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -72,13 +72,13 @@
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
-	margin-left:15px;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: #999999;
+	margin-left:15px;
 }
 
 .sidebar-nav li a:hover {
@@ -110,20 +110,26 @@
 	margin-left:-24px;
 	margin-right: 24px;
 }
+.sidebar-nav li:hover {
+	background:#eee;
+}
+.sidebar-nav li:hover  a{
+	color:#337ab7;
+}
 .navbar-toggle{
 	float: left;
 	margin-left: 15px;
 }
 .btn-fab{
     border-radius: 50%;
-    width: 50px;
+    width: 4rem;
 	z-index: 2;
 	position:fixed;
 }
-.btn-fab.top{ top:20px;}
-.btn-fab.bottom{bottom:20px;}
-.btn-fab.left{left:20px;}
-.btn-fab.right{right:20px;}
+.btn-fab.top{ top:3rem;}
+.btn-fab.bottom{bottom:3rem;}
+.btn-fab.left{left:15px;}
+.btn-fab.right{right:15px;}
 @media (min-width: 0) {
 	.navbar-toggle{
 		  display: block; /* force showing the toggle */
